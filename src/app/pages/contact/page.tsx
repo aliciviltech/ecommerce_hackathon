@@ -15,7 +15,7 @@ type Inputs = {
 
 
 const Contact = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
     return (
         <div className='Contact'>
@@ -87,7 +87,7 @@ const Contact = () => {
 
                                 </div>
 
-                                <div className="button">
+                                <div className="button" onClick={handleSubmit(onSubmit)}>
                                     <PrimaryButton text='Submit' width={237} height={48} radius={15}/>
                                 </div>
                                 

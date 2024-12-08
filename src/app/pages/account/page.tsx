@@ -10,11 +10,8 @@ type LoginInputs = {
     email: string,
     password: string,
 };
-type RegisterInputs = {
-    email: string,
-};
 const Account = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm<LoginInputs>();
+    const { register, handleSubmit, formState: { errors } } = useForm<LoginInputs>();
     const onSubmit: SubmitHandler<LoginInputs> = data => console.log(data);
     return (
         <div className='Account'>
@@ -44,7 +41,7 @@ const Account = () => {
                                 Remember me
                             </div>
 
-                            <div className="button">
+                            <div className="button" onClick={handleSubmit(onSubmit)}>
                                 <PrimaryButton text='Log In' width={215} height={64} radius={15}/>
                             </div>
                             <div className="forgetPassword">
