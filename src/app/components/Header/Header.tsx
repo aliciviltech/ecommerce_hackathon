@@ -8,7 +8,7 @@ const Header = () => {
     const [hideMenu, setHideMenu] = useState(true);
     const [hideCart, setHideCart] = useState(true);
     const handleMenu = () => {
-        setHideMenu(true)
+        setHideMenu(true);
     }
     return (
         <div className='Header w-screen h-[60px] px-10 flex items-center relative z-20 lg:justify-end lg:px-20'>

@@ -1,3 +1,5 @@
+'use client'
+import { useState } from "react";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
@@ -11,13 +13,14 @@ export default function Home() {
 
 
     <div className="Home">
-      <Header/>
-      <Hero/>
-      <Section1/>
-      <Section2/>
-      <Section3/>
-      <Section4/>
-      <Footer/>
+      <Header />
+      <Hero />
+      <Section1 />
+      <Section2 />
+      <Section3 />
+      <Section4 />
+      <Footer />
+      
     </div>
 
 

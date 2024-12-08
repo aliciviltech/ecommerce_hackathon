@@ -7,59 +7,68 @@
     src: url('/fonts/Poppins-Regular.ttf');
 }
 
-:root{
+:root {
     --primaryColor: #FBEBB5;
     --secondaryColor: #B88E2F;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: poppins;
 }
-.headingH1{
+
+.headingH1 {
     font-size: 64px;
     font-weight: 500;
     line-height: 96px;
 }
-.headingH2{
+
+.headingH2 {
     font-size: 36px;
     font-weight: 600;
     line-height: 54px;
 }
-.headingH3{
+
+.headingH3 {
     font-size: 48px;
     font-weight: 500;
     line-height: 72px;
 }
-.headingH4{
+
+.headingH4 {
     font-size: 16px;
     font-weight: 500;
     line-height: 36px;
 }
-.paragraphP1{
+
+.paragraphP1 {
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
 }
-.paragraphP2{
+
+.paragraphP2 {
     font-size: 16px;
     line-height: 24px;
     font-weight: 500;
     color: #9F9F9F;
 }
-.paragraphP3{
+
+.paragraphP3 {
     font-size: 24px;
     line-height: 36px;
     font-weight: 500;
 }
-.paragraphP4{
+
+.paragraphP4 {
     font-size: 20px;
     line-height: 30px;
     font-weight: 400;
 }
 
-.anchorA1{
+.anchorA1 {
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
@@ -67,14 +76,19 @@
     padding-bottom: 10px;
     width: fit-content;
 }
+.Home{
+    overflow: hidden;
+}
+
 
 @media screen and (max-width:600px) {
-    .headingH1{
+    .headingH1 {
         font-size: 50px;
         line-height: 75px;
     }
-    .headingH3{
+
+    .headingH3 {
         font-size: 36px;
         line-height: 50px;
-    }   
+    }
 }
