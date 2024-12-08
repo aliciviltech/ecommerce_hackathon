@@ -1,0 +1,72 @@
+.ContactSection{
+    width: 900px;
+    margin: auto;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.ContactContent{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    row-gap: 50px;
+    margin-top: 50px;
+}
+.ContactContent .myContact{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.ContactContent .myContact .address{
+    display: flex;
+    gap: 20px;
+}
+.ContactContent .myContact .address i{
+    font-size: 22px;
+}
+.ContactContent .yourDetails{
+    width: 70%;
+}
+
+.ContactContent form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.ContactContent .field{
+    display: flex;
+    flex-direction: column;
+}
+.ContactContent .field input{
+    border: 1px solid #9F9F9F;
+    height: 60px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 1023px) {
+    .ContactSection{
+        width: 95%;
+    }
+    .ContactContent{
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        row-gap: 50px;
+        margin-top: 50px;
+
+        flex-direction: column;
+    }
+    .ContactContent .myContact{
+        width: 100%;
+    }
+.ContactContent .yourDetails{
+    width: 100%;
+}
+}

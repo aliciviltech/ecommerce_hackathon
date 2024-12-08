@@ -1,4 +1,5 @@
 import Card from '@/app/components/Card/Card'
+import Footer from '@/app/components/Footer/Footer'
 import Header from '@/app/components/Header/Header'
 import HeroSecondary from '@/app/components/HeroSecondary/HeroSecondary'
 import { AllProductsData } from '@/utils/AllProductsData'
@@ -34,6 +35,7 @@ const Shop = () => {
             <div className="pageNumber w-fit py-2 px-4 rounded-md bg-[var(--primaryColor)]">next</div>
 
         </div>
+        <Footer/>
     </div>
   )
 }

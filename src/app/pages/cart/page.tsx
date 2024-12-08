@@ -4,9 +4,9 @@ import Header from '@/app/components/Header/Header'
 import HeroSecondary from '@/app/components/HeroSecondary/HeroSecondary'
 import React from 'react'
 import Image from 'next/image';
+import Footer from '@/app/components/Footer/Footer';
 
 const Cart = () => {
-    const pageNumbers = [1,2,3];
   return (
     <div className='Cart'>
         <Header/>
@@ -40,6 +40,8 @@ const Cart = () => {
                 <PrimaryButton text='Checkout' width={222} height={59} />
             </div>
         </div>
+
+        <Footer/>
         
     </div>
   )

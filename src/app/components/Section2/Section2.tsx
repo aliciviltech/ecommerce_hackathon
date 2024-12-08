@@ -2,6 +2,7 @@ import React from 'react'
 import './Section2.css'
 import Card from '../Card/Card'
 import { AllProductsData } from '@/utils/AllProductsData'
+import Link from 'next/link'
 
 const Section2 = () => {
     return (
@@ -15,7 +16,7 @@ const Section2 = () => {
                     AllProductsData.map((product)=>{
                         return(
                             product.section === 'top_picks' && 
-                            <Card key={product.id} product={product} />
+                            <Link key={product.id} href={`/pages/product_detail/${product.id}`}><Card product={product} /></Link> 
                         )
                     })
                 }

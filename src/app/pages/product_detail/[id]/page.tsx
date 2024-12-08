@@ -8,9 +8,15 @@ import PrimaryButton from '@/app/components/Button/PrimaryButton'
 import Link from 'next/link'
 import Card from '@/app/components/Card/Card'
 import Image from 'next/image'
+import Footer from '@/app/components/Footer/Footer'
 
 const ProductDetailPage = () => {
     const [quantity, setQuantity] = useState(1)
+    const decreaseQty = ()=>{
+        if(quantity > 0){
+            setQuantity(quantity - 1)
+        }
+    }
     const randomNumber= Math.random()*16;
     const param = useParams()
     const { id } = param;
@@ -50,7 +56,7 @@ const ProductDetailPage = () => {
                     </div>
                     <div className="quantity flex flex-wrap gap-5">
                         <div className="quantity flex gap-5 border border-black rounded-xl h-[64px] w-[90px] flex items-center justify-center w-fit">
-                            <button onClick={() => { quantity > 0 && setQuantity(quantity - 1) }}>-</button>
+                            <button onClick={decreaseQty}>-</button>
                             {quantity}
                             <button onClick={() => {setQuantity(quantity + 1)}}>+</button>
                         </div>
@@ -74,7 +80,8 @@ const ProductDetailPage = () => {
                 }
                 </div>
             </div>
-            {id}
+            
+            <Footer/>
         </div>
     )
 }

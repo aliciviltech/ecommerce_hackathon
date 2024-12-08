@@ -1,11 +1,51 @@
-.checkoutContent{
+.checkoutSection{
     padding: 50px 0;
     width: 90%;
     margin: auto;
+}
+.checkoutContent{
     display: flex;
     justify-content: space-between;
 }
 
 .checkoutContent .col{
     width: 45%;
+}
+.checkoutContent form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.checkoutContent .field{
+    display: flex;
+    flex-direction: column;
+}
+.checkoutContent .field input{
+    border: 1px solid #9F9F9F;
+    height: 60px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.checkoutContent .cartDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.checkoutContent .cartDetails .section{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width:600px) {
+    .checkoutContent{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .checkoutContent .col{
+        width: 95%;
+        margin: auto;
+    }
 }
