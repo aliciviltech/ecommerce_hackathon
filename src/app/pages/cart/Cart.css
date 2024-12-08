@@ -52,7 +52,7 @@
         width: 95%;
         text-align: center;
     }
-    .Cart table img{
+    .Cart table .itemImage{
         width: 12vmin;
     }
 

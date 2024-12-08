@@ -17,7 +17,7 @@
     width: 400px;
     height: 350px;
 }
-.Section1 .col img{
+.Section1 .col .tableImage{
     width: 90%;
 }
 .Section1 .col .text{
@@ -47,7 +47,7 @@
         display: flex;
         justify-content: center;
     }
-    .Section1 .col img{
+    .Section1 .col .tableImage{
         width: 250px;
     }
 }

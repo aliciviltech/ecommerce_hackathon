@@ -1,6 +1,7 @@
 import React from 'react'
 import './Hero.css'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Hero = () => {
   return (
@@ -12,7 +13,8 @@ const Hero = () => {
             </div>
         </div>
         <div className="rightCol">
-            <img src="/images/hero_rocket_single.png" alt="" />
+            <Image className='heroImage' src="/images/hero_rocket_single.png" alt="heroImage" width={600} height={600}  />
+            <img />
         </div>
     </div>
   )

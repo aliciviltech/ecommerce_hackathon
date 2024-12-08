@@ -1,12 +1,13 @@
 import React from 'react'
 import './Section3.css'
 import PrimaryButton from '../Button/PrimaryButton'
+import Image from 'next/image'
 
 const Section3 = () => {
   return (
     <div className='Section3'>
         <div className="leftCol">
-            <img src="/images/asgaard_sofa.png" alt="" />
+          <Image src="/images/asgaard_sofa.png" alt="asgardSofa" width={800} height={600}/>
         </div>
         <div className="rightCol">
                 <p className='paragraphP3'>New Arrivals</p>

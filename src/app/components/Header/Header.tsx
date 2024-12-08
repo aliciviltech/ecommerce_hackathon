@@ -2,7 +2,6 @@
 import Link from 'next/link'
 import './Header.css'
 import React, { useState } from 'react'
-import PrimaryButton from '../Button/PrimaryButton'
 
 const Header = () => {
     const [hideMenu, setHideMenu]=useState(true);

@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import './HeroSecondary.css'
-import { useParams } from 'next/navigation'
 
 const HeroSecondary = ({page}:{page:string}) => {
     return (

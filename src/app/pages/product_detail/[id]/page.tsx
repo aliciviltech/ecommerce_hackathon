@@ -7,10 +7,11 @@ import React, { useState } from 'react'
 import PrimaryButton from '@/app/components/Button/PrimaryButton'
 import Link from 'next/link'
 import Card from '@/app/components/Card/Card'
+import Image from 'next/image'
 
 const ProductDetailPage = () => {
     const [quantity, setQuantity] = useState(1)
-    const [randomNumber, setRandomNumber]=useState(Math.random()*16);
+    const randomNumber= Math.random()*16;
     const param = useParams()
     const { id } = param;
     const selectedProduct = AllProductsData.find((product) => product.id === Number(id))
@@ -21,7 +22,10 @@ const ProductDetailPage = () => {
             
             {/* ============================ product details =================================== */}
             <div className="productDetails">
-                <div className="image"><img src={selectedProduct?.imageURL} alt="" /></div>
+                {
+                    selectedProduct &&
+                    <div className="image"> <Image className='itemImage' src={selectedProduct.imageURL} alt="itemImage" width={400} height={400} /></div>
+                }
                 <div className="text flex flex-col gap-5">
                     <h1 className='headingH2'>{selectedProduct?.title}</h1>
                     <p className='paragraphP3'>Rs. {selectedProduct?.price}.00</p>
@@ -45,10 +49,10 @@ const ProductDetailPage = () => {
                         </div>
                     </div>
                     <div className="quantity flex flex-wrap gap-5">
-                        <div className="quantity flex gap-5 border border-black rounded-xl h-[64px] w-[100px] flex items-center justify-center w-fit">
+                        <div className="quantity flex gap-5 border border-black rounded-xl h-[64px] w-[90px] flex items-center justify-center w-fit">
                             <button onClick={() => { quantity > 0 && setQuantity(quantity - 1) }}>-</button>
                             {quantity}
-                            <button onClick={() => setQuantity(quantity + 1)}>+</button>
+                            <button onClick={() => {setQuantity(quantity + 1)}}>+</button>
                         </div>
                         <PrimaryButton  text='Add to cart' width={215} height={64} radius={15} />
                     </div>

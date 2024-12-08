@@ -4,7 +4,6 @@ import HeroSecondary from '@/app/components/HeroSecondary/HeroSecondary'
 import React from 'react'
 
 const Checkout = () => {
-    const pageNumbers = [1,2,3];
   return (
     <div className='Checkout'>
         <Header/>

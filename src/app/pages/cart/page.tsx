@@ -3,6 +3,7 @@ import './Cart.css'
 import Header from '@/app/components/Header/Header'
 import HeroSecondary from '@/app/components/HeroSecondary/HeroSecondary'
 import React from 'react'
+import Image from 'next/image';
 
 const Cart = () => {
     const pageNumbers = [1,2,3];
@@ -22,7 +23,7 @@ const Cart = () => {
                     <th>Sub-Total</th>
                 </tr>
                 <tr>
-                    <td className='flex gap-5 items-center'><img className='w-[100px]' src="/images/asgaard_sofa.png" alt="" /> Asgaard Sofa </td>
+                    <td className='flex gap-5 items-center'> <Image className='itemImage w-[100px]' src="/images/asgaard_sofa.png" alt="image" width={200} height={200} /> Asgaard Sofa </td>
                     <td>Rs. 250,000.00</td>
                     <td> <div className="quantity">1</div> </td>
                     <td> <div>Rs. 250,000.00</div> </td>
