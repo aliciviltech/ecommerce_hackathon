@@ -16,4 +16,10 @@ export const ProductImages = {
     outdoor_bar_table:outdoor_bar_table,
     asgard_sofa:asgard_sofa,
     blog1:blog1,
+    blog2:blog2,
+    blog3:blog3,
+    granit_dining_table:granit_dining_table,
+    hero_rocket_single:hero_rocket_single,
+    plain_console:plain_console,
+    trenton_modular_sofa:trenton_modular_sofa,
 }
