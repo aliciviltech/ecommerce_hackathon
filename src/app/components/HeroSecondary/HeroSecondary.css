@@ -1,0 +1,20 @@
+.HeroSecondary{
+    height: 50vh;
+    margin-top: 60px;
+    background-image: url('/images/hero_secondary.jpeg');
+    background-position: center;
+    background-size: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.HeroSecondary::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff79;
+}

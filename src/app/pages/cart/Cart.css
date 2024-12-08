@@ -1,0 +1,66 @@
+.Cart .cartContent {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.Cart .table {
+    width: 70%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.Cart table {
+    width: 80%;
+    text-align: center;
+}
+
+.Cart table td {
+    vertical-align: middle;
+}
+
+.Cart .cartTotals {
+    width: 30%;
+    background-color: var(--primaryColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+@media screen and (max-width:1024px) {
+    .Cart .cartContent {
+        font-size: 2vmin;
+        padding: 50px 0;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Cart .table {
+        width: 100%;
+    }
+
+    .Cart table {
+        width: 95%;
+        text-align: center;
+    }
+    .Cart table img{
+        width: 12vmin;
+    }
+
+    .Cart .cartTotals {
+        width: 80vmin;
+    }
+    .Cart .cartTotals span{
+        font-size: 16px;
+    }
+
+}

@@ -1,0 +1,11 @@
+.checkoutContent{
+    padding: 50px 0;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkoutContent .col{
+    width: 45%;
+}

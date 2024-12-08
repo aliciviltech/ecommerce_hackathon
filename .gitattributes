@@ -1,0 +1,15 @@
+# Enforce consistent line endings
+* text=auto
+
+# Specific line-ending rules
+*.sh text eol=lf
+*.bat text eol=crlf
+
+# Prevent line-ending conversion for binary files
+*.png binary
+*.jpg binary
+*.pdf binary
+
+# Handle merge conflicts
+*.lock merge=ours
+*.json merge=ours

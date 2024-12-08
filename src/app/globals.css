@@ -2,26 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+    font-family: poppins;
+    src: url('/fonts/Poppins-Regular.ttf');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root{
+    --primaryColor: #FBEBB5;
+    --secondaryColor: #B88E2F;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+.headingH1{
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 96px;
+}
+.headingH2{
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 54px;
+}
+.headingH3{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 72px;
+}
+.headingH4{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 36px;
+}
+.paragraphP1{
+    color: #000000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.paragraphP2{
+    color: #9F9F9F;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+.paragraphP3{
+    font-size: 24px;
+    line-height: 36px;
+    color: #000000;
+    font-weight: 500;
+}
+.paragraphP4{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.anchorA1{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    width: fit-content;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@media screen and (max-width:600px) {
+    .headingH1{
+        font-size: 50px;
+        line-height: 75px;
+    }
+    .headingH3{
+        font-size: 36px;
+        line-height: 50px;
+    }   
 }
