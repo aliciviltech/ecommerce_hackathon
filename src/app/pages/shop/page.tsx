@@ -1,10 +1,10 @@
+'use client'
 import Card from '@/app/components/Card/Card'
 import Footer from '@/app/components/Footer/Footer'
 import Header from '@/app/components/Header/Header'
 import HeroSecondary from '@/app/components/HeroSecondary/HeroSecondary'
 import { AllProductsData } from '@/utils/AllProductsData'
 import Link from 'next/link'
-import React from 'react'
 
 const Shop = () => {
     const pageNumbers = [1,2,3];

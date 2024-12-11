@@ -23,6 +23,7 @@
 
 .Cart .cartTotals {
     width: 30%;
+    height: fit-content;
     background-color: var(--primaryColor);
     display: flex;
     flex-direction: column;

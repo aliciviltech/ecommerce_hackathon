@@ -104,7 +104,7 @@ export const AllProductsData = [
     {
         id:13,
         title:'Asgaard sofa',
-        section:'allProducts',
+        section:'new_arrival',
         price:250000,
         imageURL:asgaardSofa.src,
     },
