@@ -1,7 +1,7 @@
 'use client'
 import {v4 as uuidv4} from 'uuid'
 import { AllProductsData, CartItemType } from '@/utils/AllProductsData';
-import React, { createContext, ReactNode, useEffect, useState } from 'react'
+import React, { createContext, ReactNode, useState } from 'react'
 
 interface CartContextType{
     cartItems:CartItemType[] | [];
@@ -42,7 +42,7 @@ const CartContext = ({ children }: { children: ReactNode }) => {
     
     // deleting items from cart
     const deleteCartItemF = (id: string) => {
-        const updatedCartItems = cartItems.filter((item: any) => {
+        const updatedCartItems = cartItems.filter((item: CartItemType) => {
             return (
                 item.cartId !== id
             )

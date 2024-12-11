@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Footer from '@/app/components/Footer/Footer';
 import { CartContextValue } from '@/app/context/CartContext';
 import Link from 'next/link';
+import { CartItemType } from '@/utils/AllProductsData';
 
 const Cart = () => {
     const cartContextValue = useContext(CartContextValue);
@@ -20,7 +21,7 @@ const Cart = () => {
     useEffect(()=>{
         const totalAmountF = ()=>{
             let sum=0;
-            cartItems.forEach((item:any) => {
+            cartItems.forEach((item:CartItemType) => {
                 sum += item.quantity*item.price
             });
             console.log(sum)
@@ -45,7 +46,7 @@ const Cart = () => {
                     <th>Action</th>
                 </tr>
                 {
-                    cartItems.map((item:any)=>{
+                    cartItems.map((item:CartItemType)=>{
                         return(
                         <tr key={item.cartId}>
                             <td className='flex gap-5 items-center text-left'> <Image className='itemImage w-[100px]' src={item.imageURL} alt="image" width={200} height={200} /> {item.title} </td>
