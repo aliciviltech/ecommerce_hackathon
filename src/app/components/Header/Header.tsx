@@ -5,11 +5,14 @@ import React, { useContext, useState } from 'react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { CartContextValue } from '@/app/context/CartContext'
+import { CartItemType } from '@/utils/AllProductsData'
 
 const Header = () => {
     const currentPath = usePathname();
     const cartContextValue = useContext(CartContextValue);
+    console.log(cartContextValue)
     const { cartItems } = cartContextValue;
+    console.log(cartItems)
     console.log(cartItems.length)
     const [hideMenu, setHideMenu] = useState(true);
     const [hideCart, setHideCart] = useState(true);
@@ -64,7 +67,7 @@ const Header = () => {
                         <div className="cartItems">
                         {
                             cartItems.length>0 ?
-                            cartItems.map((item:any) => {
+                            cartItems.map((item:CartItemType) => {
                                 return (
                                     <div key={item.id} className="items flex gap-2">
                                         <div className="image w-[100px] h-[70px]"> <Image className=' w-[100%] h-[100%]  object-contain' src={item.imageURL} alt="itemImage" width={100} height={100} /></div>

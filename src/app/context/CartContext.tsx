@@ -1,24 +1,33 @@
 'use client'
 import {v4 as uuidv4} from 'uuid'
-import { AllProductsData } from '@/utils/AllProductsData';
+import { AllProductsData, CartItemType } from '@/utils/AllProductsData';
 import React, { createContext, ReactNode, useEffect, useState } from 'react'
 
-export const CartContextValue = createContext<any>(undefined);
+interface CartContextType{
+    cartItems:CartItemType[] | [];
+    setCartItems: React.Dispatch<React.SetStateAction<CartItemType[]>>;
+    addCartItemF: (id:number, quantity:number)=>void;
+    deleteCartItemF:(id:string)=>void;
+}
+export const CartContextValue = createContext<CartContextType|null>(null);
+
+
+
 
 const CartContext = ({ children }: { children: ReactNode }) => {
     const uniqueID = uuidv4();
     // getting cart data from local storage
     const storedCartItemsJson = localStorage.getItem('cartItems');
     const storedCartItems = storedCartItemsJson ? JSON.parse(storedCartItemsJson): [];
-    const [cartItems, setCartItems] = useState<any>(storedCartItems || []);
+    const [cartItems, setCartItems] = useState<CartItemType[]>(storedCartItems || []);
 
     // updating cart items to local storage
     const updateLocalStorage = () => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems))
     }
-    useEffect(() => {   
-        updateLocalStorage()
-    }, [cartItems])
+    // useEffect(() => {   
+    //     updateLocalStorage()
+    // }, [cartItems])
 
     
     // adding items to cart

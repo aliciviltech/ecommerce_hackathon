@@ -11,7 +11,8 @@ import Link from 'next/link';
 
 const Cart = () => {
     const cartContextValue = useContext(CartContextValue);
-    const {cartItems, deleteCartItemF}=cartContextValue;
+    console.log(cartContextValue)
+    const {cartItems, deleteCartItemF}=  cartContextValue;
     const [Subtotal, setSubtotal] = useState(0)
     const deliveryCharges = 5199;
 
@@ -44,7 +45,7 @@ const Cart = () => {
                     <th>Action</th>
                 </tr>
                 {
-                    cartItems.map((item:any, index:number)=>{
+                    cartItems.map((item:any)=>{
                         return(
                         <tr key={item.cartId}>
                             <td className='flex gap-5 items-center text-left'> <Image className='itemImage w-[100px]' src={item.imageURL} alt="image" width={200} height={200} /> {item.title} </td>

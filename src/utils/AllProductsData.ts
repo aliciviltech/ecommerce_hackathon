@@ -14,7 +14,26 @@ import mayaSofa from '../../public/images/Maya_sofa.png'
 import outdoorSofa from '../../public/images/Outdoor_sofa.png'
 import plainConsole2 from '../../public/images/Plain console_2.png'
 
-export const AllProductsData = [
+export interface ProductsType {
+    id:number;
+        title:string;
+        section:string;
+        price:number;
+        imageURL:string;
+}
+
+
+export interface CartItemType {
+        id:number;
+        title:string;
+        section:string;
+        price:number;
+        imageURL:string;
+        cartId:string;
+        quantity:number;
+}
+
+export const AllProductsData: ProductsType[] = [
     {
         id:1,
         title:'Trenton modular sofa_3',

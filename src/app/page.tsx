@@ -6,7 +6,7 @@ import Section1 from "./components/section1/Section1";
 import Section2 from "./components/Section2/Section2";
 import Section3 from "./components/Section3/Section3";
 import Section4 from "./components/Section4/Section4";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { CartContextValue } from "./context/CartContext";
 
 export default function Home() {
