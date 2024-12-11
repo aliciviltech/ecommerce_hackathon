@@ -1,7 +1,7 @@
 'use client'
 import {v4 as uuidv4} from 'uuid'
 import { AllProductsData, CartItemType } from '@/utils/AllProductsData';
-import React, { createContext, ReactNode, useState } from 'react'
+import React, { createContext, ReactNode, useEffect, useState } from 'react'
 
 interface CartContextType {
     cartItems:CartItemType[] | [];
@@ -12,8 +12,8 @@ interface CartContextType {
 export const CartContextValue = createContext<CartContextType>({
     cartItems: [],
     setCartItems: ()=>{},
-    addCartItemF: (id:number, quantity:number)=>{},
-    deleteCartItemF:(id:string)=>{}
+    addCartItemF: ()=>{},
+    deleteCartItemF:()=>{}
 });
 
 
@@ -30,9 +30,9 @@ const CartContext = ({ children }: { children: ReactNode }) => {
     const updateLocalStorage = () => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems))
     }
-    // useEffect(() => {   
-    //     updateLocalStorage()
-    // }, [cartItems])
+    useEffect(() => {   
+        updateLocalStorage()
+    }, [cartItems, updateLocalStorage])
 
     
     // adding items to cart
