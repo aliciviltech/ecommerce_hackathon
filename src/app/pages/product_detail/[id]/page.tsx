@@ -67,7 +67,7 @@ const ProductDetailPage = () => {
                             {quantity}
                             <button onClick={() => {setQuantity(quantity + 1)}}>+</button>
                         </div>
-                        <div className="addCartButton w-fit" onClick={()=>addCartItemF(id,quantity)}><PrimaryButton  text='Add to cart' width={215} height={64} radius={15} /></div>
+                        <div className="addCartButton w-fit" onClick={()=>addCartItemF(Number(id),quantity)}><PrimaryButton  text='Add to cart' width={215} height={64} radius={15} /></div>
                     </div>
                 </div>
             </div>
