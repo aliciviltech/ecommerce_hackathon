@@ -3,13 +3,18 @@ import {v4 as uuidv4} from 'uuid'
 import { AllProductsData, CartItemType } from '@/utils/AllProductsData';
 import React, { createContext, ReactNode, useState } from 'react'
 
-interface CartContextType{
+interface CartContextType {
     cartItems:CartItemType[] | [];
     setCartItems: React.Dispatch<React.SetStateAction<CartItemType[]>>;
     addCartItemF: (id:number, quantity:number)=>void;
     deleteCartItemF:(id:string)=>void;
 }
-export const CartContextValue = createContext<CartContextType|null>(null);
+export const CartContextValue = createContext<CartContextType>({
+    cartItems: [],
+    setCartItems: ()=>{},
+    addCartItemF: (id:number, quantity:number)=>{},
+    deleteCartItemF:(id:string)=>{}
+});
 
 
 
