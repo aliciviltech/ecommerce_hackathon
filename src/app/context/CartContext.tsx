@@ -22,9 +22,14 @@ export const CartContextValue = createContext<CartContextType>({
 const CartContext = ({ children }: { children: ReactNode }) => {
     const uniqueID = uuidv4();
     // getting cart data from local storage
-    const storedCartItemsJson = localStorage.getItem('cartItems');
-    const storedCartItems = storedCartItemsJson ? JSON.parse(storedCartItemsJson): [];
-    const [cartItems, setCartItems] = useState<CartItemType[]>(storedCartItems || []);
+    
+    const [cartItems, setCartItems] = useState<CartItemType[]>([]);
+
+    useEffect(()=>{
+        const storedCartItemsJson = localStorage.getItem('cartItems');
+        const storedCartItems = storedCartItemsJson ? JSON.parse(storedCartItemsJson): [];
+        setCartItems(storedCartItems);
+    },[])
 
     // updating cart items to local storage
     const updateLocalStorage = () => {
