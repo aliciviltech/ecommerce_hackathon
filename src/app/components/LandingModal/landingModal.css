@@ -1,0 +1,12 @@
+.newArrivalTitle {
+    animation: flashAnimation 1s infinite; /* Animation name, duration, and infinite loop */
+  }
+  
+  @keyframes flashAnimation {
+    0%, 100% {
+      opacity: 1; /* Fully visible */
+    }
+    50% {
+      opacity: 0; /* Hidden */
+    }
+  }

@@ -6,14 +6,14 @@
 }
 
 .Cart .table {
-    width: 70%;
+    width: 60%;
     height: fit-content;
     display: flex;
     justify-content: center;
 }
 
 .Cart table {
-    width: 80%;
+    width: 100%;
     text-align: center;
 }
 

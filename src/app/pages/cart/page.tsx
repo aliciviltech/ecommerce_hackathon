@@ -15,7 +15,7 @@ const Cart = () => {
     console.log(cartContextValue)
     const {cartItems, deleteCartItemF}=  cartContextValue;
     const [Subtotal, setSubtotal] = useState(0)
-    const deliveryCharges = 5199;
+    const deliveryCharges = cartItems.length>0 ? 5199 : 0;
 
     // getting total amount
     useEffect(()=>{

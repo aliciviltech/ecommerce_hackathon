@@ -1,5 +1,9 @@
 .Card{
     transition: 0.3s;
+    box-shadow: 0 0 5px rgba(128, 128, 128, 0.377);
+    border-radius: 10px;
+    height: 100%;
+    padding: 10px;
 }
 .Card:hover{
     transform: scale(1.05);

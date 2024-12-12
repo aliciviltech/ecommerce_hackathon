@@ -8,6 +8,7 @@ import Section3 from "./components/Section3/Section3";
 import Section4 from "./components/Section4/Section4";
 import { useContext } from "react";
 import { CartContextValue } from "./context/CartContext";
+import LandingModal from "./components/LandingModal/LandingModal";
 
 export default function Home() {
   const cartItems = useContext(CartContextValue)
@@ -17,6 +18,7 @@ export default function Home() {
 
     <div className="Home">
       <Header />
+      <LandingModal/>
       <Hero />
       <Section1 />
       <Section2 />

@@ -27,7 +27,7 @@ const Header = () => {
     // =================== router events ========================
 
     return (
-        <div className='Header w-screen h-[60px] px-10 flex items-center relative lg:justify-end lg:px-20'>
+        <div className='Header w-[100%] px-10 h-[60px] flex items-center relative lg:justify-end lg:px-20'>
             <div className="menuButton lg:hidden z-10" onClick={() => { setHideMenu(!hideMenu) }}>
                 {
                     hideMenu ?
@@ -41,27 +41,31 @@ const Header = () => {
                 }
 
             </div>
-            <div className={`nav ${hideMenu && "hidden"} flex lg:flex lg:gap-52`}>
-                <div className="nav1 flex gap-20 lg:flex">
+            <div className={`nav ${hideMenu ? "left-[-100vw]":"left-0"} top-0 flex lg:flex lg:gap-52`}>
+                <div className="nav1 flex lg:gap-20 lg:flex">
                     <Link className='linkTag' href={'/'} onClick={() => handleMenu('/')}>Home</Link>
                     <Link className='linkTag' href={'/pages/shop'} onClick={() => handleMenu('/pages/shop')}>Shop</Link>
                     <Link className='linkTag' href={''} onClick={() => handleMenu('')}>About</Link>
                     <Link className='linkTag' href={'/pages/contact'} onClick={() => handleMenu('/pages/contact')}>Contact</Link>
                 </div>
-                <div className="nav2 flex gap-10 lg:flex">
+                <div className="nav2 flex lg:gap-10 lg:flex">
                     <Link href={'/pages/account'} className='linkTag flex gap-3' onClick={() => handleMenu('/pages/account')}><i className="fa-solid fa-user"></i> <span className='block lg:hidden'>User Account</span> </Link>
                     <Link href={''} className='linkTag flex gap-3' onClick={() => handleMenu('')}><i className="fa-solid fa-magnifying-glass"></i><span className='block lg:hidden'>Search</span></Link>
                     <Link href={''} className='linkTag flex gap-3' onClick={() => handleMenu('')}><i className="fa-solid fa-heart"></i><span className='block lg:hidden'>Wish List</span></Link>
-                    <Link href={''} className='linkTag flex gap-3' onClick={() => { setHideCart(!hideCart); setHideMenu(true) }}><div className="icon relative"><i className="fa-solid fa-cart-shopping"></i><span className='bg-red-500 text-white text-sm rounded-full px-1 absolute top-[-15px] right-[-10px]'> {cartItems.length} </span></div><span className='block lg:hidden'>Cart</span>  </Link>
+                    <Link href={''} className='linkTag cartLinkTag flex gap-3' onClick={() => { setHideCart(!hideCart); setHideMenu(true) }}>
+                        <div className="icon relative">
+                            <i className="fa-solid fa-cart-shopping"></i>
+                            <span className='itemsNumber'> {cartItems.length}</span>
+                        </div>
+                    </Link>
                 </div>
             </div>
 
 
             {/* =============================== cart drop down Flag =========================== */}
             {
-                !hideCart &&
-                <div className="cartFlagContainer z-20">
-                    <div className="cartFlag">
+                <div className={`cartFlagContainer z-20`}>
+                    <div className={`cartFlag ${hideCart ? "top-[-100vh]":"top-0"}` }>
                         <div className="closeFlag hover:cursor-pointer absolute top-4 right-4" onClick={() => setHideCart(true)}>close <i className="fa-solid fa-close"></i></div>
                         <h1 className='border-b border-gray-400 pb-4'>Shoping Cart</h1>
                         <div className="cartItems">

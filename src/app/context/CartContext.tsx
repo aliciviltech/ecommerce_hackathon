@@ -32,22 +32,18 @@ const CartContext = ({ children }: { children: ReactNode }) => {
     },[])
 
     // updating cart items to local storage
-    const updateLocalStorage = () => {
-        localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    const updateLocalStorage = (items:CartItemType[]) => {
+        localStorage.setItem('cartItems', JSON.stringify(items))
     }
-    useEffect(() => {   
-        updateLocalStorage()
-    }, [cartItems, updateLocalStorage])
-
     
     // adding items to cart
     const addCartItemF = (id:number,quantity:number) => {
         AllProductsData.forEach((product)=>{
             if(product.id === Number(id)){
                 setCartItems([...cartItems, {...product, cartId: uniqueID, quantity:quantity }])
+                updateLocalStorage([...cartItems, {...product, cartId: uniqueID, quantity:quantity }])
             }
         })
-        updateLocalStorage()
     }
     
     // deleting items from cart
@@ -58,7 +54,7 @@ const CartContext = ({ children }: { children: ReactNode }) => {
             )
         })
         setCartItems(updatedCartItems);
-        updateLocalStorage()
+        updateLocalStorage(updatedCartItems)
     }
 
     return (

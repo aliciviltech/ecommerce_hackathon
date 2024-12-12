@@ -5,10 +5,10 @@
     background-color: var(--primaryColor);
 }
 .Section3 .leftCol{
-    width: 72%;
+    width: 60%;
 }
 .Section3 .rightCol{
-    width: 28%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     gap: 10px;

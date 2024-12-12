@@ -11,8 +11,10 @@ import Image from 'next/image'
 import Footer from '@/app/components/Footer/Footer'
 import { CartContextValue } from '@/app/context/CartContext'
 
+
 const ProductDetailPage = () => {
     const cartContextValue =useContext(CartContextValue);
+    const [addItemLoader, setAddItemLoader] = useState(false);
     const {addCartItemF} = cartContextValue;
     const [quantity, setQuantity] = useState(1)
     const [randomIndex, setRandomIndex] = useState(0)
@@ -28,6 +30,17 @@ const ProductDetailPage = () => {
     const param = useParams()
     const { id } = param;
     const selectedProduct = AllProductsData.find((product) => product.id === Number(id))
+
+    const showCartLoader = ()=>{
+        setAddItemLoader(true);
+        setTimeout(() => {
+            setAddItemLoader(false)               
+        }, 2300);
+    }
+
+
+
+
     return (
         <div className='ProductDetailPage'>
             <Header />
@@ -67,7 +80,7 @@ const ProductDetailPage = () => {
                             {quantity}
                             <button onClick={() => {setQuantity(quantity + 1)}}>+</button>
                         </div>
-                        <div className="addCartButton w-fit" onClick={()=>addCartItemF(Number(id),quantity)}><PrimaryButton  text='Add to cart' width={215} height={64} radius={15} /></div>
+                        <div className="addCartButton w-fit" onClick={()=>{addCartItemF(Number(id),quantity); showCartLoader()}}><PrimaryButton  text='Add to cart' width={215} height={64} radius={15} /></div>
                     </div>
                 </div>
             </div>
@@ -87,6 +100,13 @@ const ProductDetailPage = () => {
                 }
                 </div>
             </div>
+
+            {
+                addItemLoader &&
+                <div className="addItemLoader">
+                    <div className="cartLoader"> <Image src={'/images/cart.gif'} alt='cartImage' width={200} height={200}/> </div>
+                </div>
+            }
             
             <Footer/>
         </div>

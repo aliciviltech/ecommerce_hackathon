@@ -24,6 +24,28 @@
     border-radius: 100%;
 }
 
+.ProductDetailPage .addItemLoader{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(5, 5, 5, 0.452);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.ProductDetailPage .addItemLoader .cartLoader{
+    width: 50%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
 @media screen and (max-width:1024px) {
     .ProductDetailPage .productDetails{
         width: 90%;
@@ -37,5 +59,8 @@
     }
 .ProductDetailPage .productDetails .image{
     width: 100%;
+}
+.ProductDetailPage .addItemLoader .cartLoader{
+    width: 80%;
 }
 }
